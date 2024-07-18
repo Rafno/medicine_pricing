@@ -1,0 +1,11 @@
+version: 2
+
+sources:
+  - name: meds
+    database: medicines  
+    schema: raw_data  
+    tables:
+      - name: stage_pricing
+        meta:
+          dagster:
+            asset_key: ["raw_data", "stage_pricing"]

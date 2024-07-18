@@ -1,0 +1,26 @@
+cubes:
+  - name: orders_preag_1_xdyk1pmz_40ko0ytt_1j5bs4h
+    sql_table: dev_pre_aggregations.orders_preag_1_xdyk1pmz_40ko0ytt_1j5bs4h
+    data_source: default
+
+    joins: []
+
+    dimensions:
+      - name: orders_status
+        sql: orders__status
+        type: string
+        title: Orders  Status
+
+    measures:
+      - name: count
+        type: count
+
+      - name: orders_count
+        sql: orders__count
+        type: sum
+        title: Orders  Count
+
+    pre_aggregations:
+      # Pre-aggregation definitions go here.
+      # Learn more in the documentation: https://cube.dev/docs/caching/pre-aggregations/getting-started
+
