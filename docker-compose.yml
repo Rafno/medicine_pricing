@@ -21,3 +21,9 @@ services:
       - MINIO_ROOT_USER=youraccesskey
       - MINIO_ROOT_PASSWORD=yoursecretkey
     command: server /data --console-address ":9001"
+
+  metabase:
+    image: metabase/metabase:latest
+    container_name: metabase
+    ports:
+      - 5000:3000
