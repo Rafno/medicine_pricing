@@ -1,5 +1,5 @@
 version: "2.2"
- 
+
 services:
   cube:
     image: cubejs/cube:latest
@@ -10,3 +10,14 @@ services:
       - CUBEJS_DEV_MODE=true
     volumes:
       - .:/cube/conf
+
+  minio:
+    image: minio/minio
+    container_name: minio1
+    ports:
+      - 9000:9000
+      - 9001:9001
+    environment:
+      - MINIO_ROOT_USER=youraccesskey
+      - MINIO_ROOT_PASSWORD=yoursecretkey
+    command: server /data --console-address ":9001"

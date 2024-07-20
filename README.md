@@ -13,7 +13,7 @@ _New to Dagster? Learn what Dagster is in [Dagster's hands-on Tutorials](https:/
 
 ### Running it locally
 
-To install this and its Python dependencies, run:
+To install Dagster and its Python dependencies, run:
 
 ```bash
 pip install -e ".[dev]"
@@ -25,6 +25,20 @@ Then, start the Dagster UI web server:
 dagster dev
 
 ```
+
+Then run 
+```
+docker compose up
+```
+
+Which will setup the cube and minio instances.
+
+Then navigate to the infrastructure folder and write
+```
+terraform apply
+```
+
+This will create the necessary buckets in your minio instance to run everything.
 
 Alternatively, you can run ```make setup```
 

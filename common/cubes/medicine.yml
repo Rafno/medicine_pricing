@@ -1,0 +1,184 @@
+cubes:
+  - name: medicine
+    sql_table: common.medicine
+    data_source: default
+
+    joins: []
+
+    dimensions:
+      - name: product_code
+        sql: product_code
+        type: string
+
+      - name: name
+        sql: name
+        type: string
+
+      - name: form
+        sql: form
+        type: string
+
+      - name: strength
+        sql: strength
+        type: string
+
+      - name: strength_unit
+        sql: strength_unit
+        type: string
+
+      - name: quantity
+        sql: quantity
+        type: string
+
+      - name: quantity_unit
+        sql: quantity_unit
+        type: string
+
+      - name: packaging
+        sql: packaging
+        type: string
+
+      - name: comments
+        sql: comments
+        type: string
+
+      - name: atc_category
+        sql: atc_category
+        type: string
+
+      - name: registration_date
+        sql: registration_date
+        type: string
+
+      - name: deregistration_date
+        sql: deregistration_date
+        type: string
+
+      - name: dispensing_method
+        sql: dispensing_method
+        type: string
+
+      - name: insurance_share
+        sql: insurance_share
+        type: string
+
+      - name: market_agent_code
+        sql: market_agent_code
+        type: string
+
+      - name: reference_price_currency
+        sql: reference_price_currency
+        type: string
+
+      - name: classification_category
+        sql: classification_category
+        type: string
+
+      - name: reference_price_category
+        sql: reference_price_category
+        type: string
+
+      - name: total_quantity
+        sql: total_quantity
+        type: string
+
+      - name: ddd_per_package
+        sql: ddd_per_package
+        type: string
+
+      - name: distributor
+        sql: distributor
+        type: string
+
+      - name: market_agent
+        sql: market_agent
+        type: string
+
+      - name: active_ingredient_name
+        sql: active_ingredient_name
+        type: string
+
+      - name: removed_from_drug_list_due_to_shortage
+        sql: removed_from_drug_list_due_to_shortage
+        type: string
+
+      - name: is_h_marked
+        sql: is_h_marked
+        type: string
+
+      - name: co_payment_code
+        sql: co_payment_code
+        type: string
+
+      - name: file_name
+        sql: file_name
+        type: string
+
+      - name: addiction_and_substance_abuse_drug_unit
+        sql: addiction_and_substance_abuse_drug_unit
+        type: string
+
+      - name: decision_lst_on_co_payment
+        sql: decision_lst_on_co_payment
+        type: string
+
+      - name: unit_price
+        sql: unit_price
+        type: string
+
+      - name: exchange_register
+        sql: exchange_register
+        type: string
+
+      - name: extracted_date
+        sql: extracted_date
+        type: time
+
+    measures:
+      - name: count
+        type: count
+
+      - name: product_number
+        sql: product_number
+        type: sum
+
+      - name: maximum_wholesale_price
+        sql: maximum_wholesale_price
+        type: sum
+
+      - name: maximum_retail_price
+        sql: maximum_retail_price
+        type: sum
+
+      - name: reference_price
+        sql: reference_price
+        type: sum
+
+      - name: distributor_wholesale_price
+        sql: distributor_wholesale_price
+        type: sum
+
+      - name: total_wholesale_price
+        sql: total_wholesale_price
+        type: sum
+
+      - name: pharmacy_purchase_price
+        sql: pharmacy_purchase_price
+        type: sum
+
+      - name: co_payment_price
+        sql: co_payment_price
+        type: sum
+
+      - name: gtin_number
+        sql: gtin_number
+        type: sum
+
+      - name: addiction_and_substance_abuse_drug_quantity
+        sql: addiction_and_substance_abuse_drug_quantity
+        type: sum
+
+    pre_aggregations:
+      # Pre-aggregation definitions go here.
+      # Learn more in the documentation: https://cube.dev/docs/caching/pre-aggregations/getting-started
+

@@ -39,6 +39,25 @@ def extract_date_from_filename(filename):
         r'lyfjaverdskra-(\d{2})(\d{4})\.xls'  # MMYYYY specific format
     ]
     
+        # Handle specific cases for when the file did not give enough information
+    if filename == 'lyfjaverdskra-132022.xls':
+        return datetime.strptime('2022-04-13', '%Y-%m-%d').date()
+
+    elif filename == 'lyfjaverdskra-142022.xls':
+        return datetime.strptime('2022-04-14', '%Y-%m-%d').date()
+
+    elif filename == 'lyfjaverdskra-15-februar.xls':
+        return datetime.strptime('2022-02-15', '%Y-%m-%d').date()
+
+    elif filename == 'lyfjaverdskra-15-januar.xls':
+        return datetime.strptime('2022-01-15', '%Y-%m-%d').date()
+
+    elif filename == 'lyfjaverdskra-202402001-2.xls':
+        return datetime.strptime('2024-02-01', '%Y-%m-%d').date() # Big sigh for spelling mistakes.
+
+    elif filename == 'lyfjaverdskra-2022915.xls':
+        return datetime.strptime('2022-09-15', '%Y-%m-%d').date()
+
     for pattern in patterns:
         match = re.search(pattern, filename)
         if match:
@@ -83,17 +102,8 @@ def extract_date_from_filename(filename):
                     return datetime.strptime(date_str, '%d%m%Y').date()
             except ValueError:
                 continue
-    
-    # Handle specific cases for when the file did not give enough information
-    if filename == 'lyfjaverdskra-132022.xls':
-        return datetime.strptime('2022-04-13', '%Y-%m-%d').date()
-    elif filename == 'lyfjaverdskra-142022.xls':
-        return datetime.strptime('2022-04-14', '%Y-%m-%d').date()
-    elif filename == 'lyfjaverdskra-15-februar.xls':
-        return datetime.strptime('2022-02-15', '%Y-%m-%d').date()
-    elif filename == 'lyfjaverdskra-15-januar.xls':
-        return datetime.strptime('2022-01-15', '%Y-%m-%d').date()
-    
+
+        
     return None
 
 def add_date_column(df, filename):
